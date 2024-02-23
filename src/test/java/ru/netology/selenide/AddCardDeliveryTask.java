@@ -1,8 +1,6 @@
 package ru.netology.selenide;
 
-import com.codeborne.selenide.SelenideElement;
-import com.codeborne.selenide.selector.ByText;
-import org.junit.jupiter.api.BeforeAll;
+
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.openqa.selenium.Keys;
@@ -10,7 +8,6 @@ import org.openqa.selenium.Keys;
 import java.time.Duration;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
-import java.util.Formatter;
 
 import static com.codeborne.selenide.Condition.*;
 import static com.codeborne.selenide.Selectors.*;
@@ -39,11 +36,11 @@ public class AddCardDeliveryTask {
         $("[data-test-id='name'] input").setValue("Макаров Иван");
         $("[data-test-id='phone'] input").setValue("+79000000666");
         $("[data-test-id='agreement']").click();
-        $("button.button").click();
+        $$("button.button").find(exactText("Забронировать")).click();
         $("[data-test-id='notification'] .notification__title")
                 .shouldHave(exactText("Успешно!"), Duration.ofSeconds(15));
         $("[data-test-id='notification'] .notification__content")
-                .shouldHave(exactText("Встреча успешно забронирована на " + planningDate));
+               .shouldHave(exactText("Встреча успешно забронирована на " + planningDate));
 
     }
 }
