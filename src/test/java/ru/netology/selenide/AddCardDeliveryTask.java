@@ -38,7 +38,7 @@ public class AddCardDeliveryTask {
         $("[data-test-id='agreement']").click();
         $$("button.button").find(exactText("Забронировать")).click();
         $("[data-test-id='notification'] .notification__title")
-                .shouldHave(exactText("Успешно!"), Duration.ofSeconds(18));
+                .shouldHave(exactText("Успешно!"), Duration.ofSeconds(15));
         $("[data-test-id='notification'] .notification__content")
                .shouldHave(exactText("Встреча успешно забронирована на " + planningDate));
 
