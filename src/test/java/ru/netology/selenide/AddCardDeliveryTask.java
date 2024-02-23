@@ -27,7 +27,7 @@ public class AddCardDeliveryTask {
     }
 
     @Test
-    public void shouldBeSuccessfullyCompleted() {
+    public void shouldBeSuccessfullyTask() {
         open("http://localhost:9999");
         $("[data-test-id='city'] input").setValue("Южно-Сахалинск");
         String planningDate = generateDate(4, "dd.MM.yyyy");
